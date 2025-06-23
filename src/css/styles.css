@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bs-gradient: linear-gradient(
+        135deg,
+        var(--bs-primary) 0%,
+        var(--bs-secondary) 100%
+    );
+    --bs-font-sans-serif: 'Montserrat', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.profile {
+    position: relative;
+    height: 75vw;
+    width: 75vw;
+    border-radius: 5vw;
+    margin-top: 5vw;
+    max-height: 40rem;
+    max-width: 40rem;
+}
+
+.profile .profile-img {
+    height: 80vw;
+    max-height: 45rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bg-gradient {
+    background-image: var(--bs-gradient) !important;
+}
+
+.bg-gradient-primary-to-secondary {
+    background: var(--bs-primary);
+    background: linear-gradient(
+        135deg,
+        var(--bs-primary) 0%,
+        var(--bs-secondary) 100%
+    );
+}
+
+.text-gradient {
+    background: -webkit-linear-gradient(
+        315deg,
+        var(--bs-primary) 0%,
+        var(--bs-secondary) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 576px) {
+    .profile {
+        height: 60vw;
+        width: 60vw;
+    }
+
+    .profile .profile-img {
+        height: 65vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .profile {
+        height: 50vw;
+        width: 50vw;
+    }
+
+    .profile .profile-img {
+        height: 55vw;
+    }
+}
+
+@media (min-width: 992px) {
+    .profile {
+        height: 40vw;
+        width: 40vw;
+    }
+
+    .profile .profile-img {
+        height: 45vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .profile {
+        height: 35vw;
+        width: 35vw;
+    }
+
+    .profile .profile-img {
+        height: 40vw;
+    }
+}
