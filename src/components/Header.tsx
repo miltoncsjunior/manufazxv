@@ -1,12 +1,12 @@
 import { Badge } from './Badge';
 
-type HeaderProps = {
+interface HeaderProps {
     profileImage: string;
     profileTags: string[];
     title: string;
     subtitle: string;
-    btnText: [string, string];
-};
+    btnsText: { section: string; description: string }[];
+}
 
 export function Header(props: HeaderProps) {
     return (
@@ -37,18 +37,19 @@ export function Header(props: HeaderProps) {
                                 {props.subtitle}
                             </div>
                             <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                <a
-                                    className="btn btn-primary btn-lg text-white px-5 py-3 me-sm-3 fs-6 fw-bolder"
-                                    href="#event"
-                                >
-                                    {props.btnText[0]}
-                                </a>
-                                <a
-                                    className="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder"
-                                    href="#rsvp"
-                                >
-                                    {props.btnText[1]}
-                                </a>
+                                {props.btnsText.map((btn, index) => (
+                                    <a
+                                        key={index}
+                                        className={`btn btn-${
+                                            index === 0
+                                                ? 'primary text-white me-sm-3'
+                                                : 'outline-dark'
+                                        } btn-lg px-5 py-3 fs-6 fw-bolder`}
+                                        href={`#${btn.section}`}
+                                    >
+                                        {btn.description}
+                                    </a>
+                                ))}
                             </div>
                         </div>
                     </div>

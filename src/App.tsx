@@ -1,4 +1,5 @@
 import profileImage from './assets/profile.png';
+import { useAppContext } from './components/AppContext';
 import { BackToTop } from './components/BackToTop';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
@@ -6,14 +7,13 @@ import { NavBar } from './components/NavBar';
 import { Section } from './components/Section';
 
 function App() {
+    const { title, menuItems, year } = useAppContext();
     return (
         <>
             <main className="flex-shrink-0">
                 <NavBar
-                    navTitle={'Manu faz XV'}
-                    aboutTitle={'Manuela'}
-                    eventTitle={'Evento'}
-                    rsvpTitle={'Confirmação'}
+                    title={title}
+                    itemsDescription={menuItems.map((item) => item.description)}
                 />
 
                 <Header
@@ -27,7 +27,7 @@ function App() {
                     ]}
                     title={'Nem todos os caminhos levam a Roma,'}
                     subtitle={'mas todos os caminhos levam a Manuela.'}
-                    btnText={['Evento', 'Confirmação']}
+                    btnsText={menuItems.slice(0, 2)}
                 />
 
                 <Section id="about" title="Quem sou eu ?">
@@ -221,7 +221,7 @@ function App() {
                     </form>
                 </Section>
             </main>
-            <Footer footerTitle={'Manuela faz XV'} year={2025} />
+            <Footer footerTitle={title} year={year} />
             <BackToTop />
         </>
     );
