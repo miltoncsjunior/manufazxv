@@ -19,7 +19,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.profile {
+.person {
     position: relative;
     height: 75vw;
     width: 75vw;
@@ -29,7 +29,7 @@ html {
     max-width: 40rem;
 }
 
-.profile .profile-img {
+.person img {
     height: 80vw;
     max-height: 45rem;
     position: absolute;
@@ -63,45 +63,45 @@ html {
 }
 
 @media (min-width: 576px) {
-    .profile {
+    .person {
         height: 60vw;
         width: 60vw;
     }
 
-    .profile .profile-img {
+    .person img {
         height: 65vw;
     }
 }
 
 @media (min-width: 768px) {
-    .profile {
+    .person {
         height: 50vw;
         width: 50vw;
     }
 
-    .profile .profile-img {
+    .person img {
         height: 55vw;
     }
 }
 
 @media (min-width: 992px) {
-    .profile {
+    .person {
         height: 40vw;
         width: 40vw;
     }
 
-    .profile .profile-img {
+    .person img {
         height: 45vw;
     }
 }
 
 @media (min-width: 1200px) {
-    .profile {
+    .person {
         height: 35vw;
         width: 35vw;
     }
 
-    .profile .profile-img {
+    .person img {
         height: 40vw;
     }
 }

@@ -1,4 +1,4 @@
-import profileImage from './assets/profile.png';
+import personImage from './assets/img/person.png';
 import { useAppContext } from './components/AppContext';
 import { BackToTop } from './components/BackToTop';
 import { Footer } from './components/Footer';
@@ -20,8 +20,8 @@ function App() {
                 />
 
                 <Header
-                    profileImage={profileImage}
-                    profileTags={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']}
+                    personImage={personImage}
+                    personTags={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']}
                     title={'Lorem ipsum dolor sit amet,'}
                     subtitle={
                         'consectetur adipisicing elit. Fugit dolorum itaque qui unde quisquam consequatur'

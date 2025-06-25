@@ -1,8 +1,8 @@
 import { Badge } from './Badge';
 
 interface HeaderProps {
-    profileImage: string;
-    profileTags: string[];
+    personImage: string;
+    personTags: string[];
     title: string;
     subtitle: string;
     btnsText: { section: string; description: string }[];
@@ -15,11 +15,10 @@ export function Header(props: HeaderProps) {
                 <div className="row gx-5 align-items-center">
                     <div className="col-xxl-7">
                         <div className="d-flex justify-content-center">
-                            <div className="profile bg-gradient-primary-to-secondary">
+                            <div className="person bg-gradient-primary-to-secondary">
                                 <img
-                                    src={props.profileImage}
-                                    className="profile-img"
-                                    alt="Profile Image"
+                                    src={props.personImage}
+                                    alt="Person Image"
                                 />
                             </div>
                         </div>
@@ -27,7 +26,7 @@ export function Header(props: HeaderProps) {
 
                     <div className="col-xxl-5">
                         <div className="text-center text-xxl-start">
-                            <Badge values={props.profileTags} />
+                            <Badge values={props.personTags} />
                             <h1 className="display-3 fw-bolder mb-2">
                                 <span className="text-gradient d-inline">
                                     {props.title}

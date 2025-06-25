@@ -4,10 +4,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
+import './assets/css/colors.scss';
+import './assets/css/styles.css';
+import './assets/js/scripts.js';
 import { AppProvider } from './components/AppProvider.tsx';
-import './css/colors.scss';
-import './css/styles.css';
-import './js/scripts.js';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
