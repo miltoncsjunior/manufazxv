@@ -2,7 +2,7 @@ import { NavItem } from './NavItem';
 
 interface NavBarProps {
     title: string;
-    menuItems: {
+    sectionItems: {
         sectionName: string;
         shortcutText: string;
     }[];
@@ -29,8 +29,8 @@ export function NavBar(props: NavBarProps) {
                     id="navbarSupportedContent"
                 >
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        {props.menuItems && (
-                            <NavItem menuItems={props.menuItems} />
+                        {props.sectionItems && (
+                            <NavItem sectionItems={props.sectionItems} />
                         )}
                     </ul>
                 </div>

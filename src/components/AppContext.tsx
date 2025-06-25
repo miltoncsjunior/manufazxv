@@ -2,10 +2,16 @@ import { createContext, useContext } from 'react';
 
 interface AppContextProps {
     title: string;
-    menuItems: {
+    headerItems: {
+        tags: string[];
+        title: string;
+        subtitle: string;
+    };
+    sectionItems: {
         sectionName: string;
-        sectionTitle: string;
         shortcutText: string;
+        sectionTitle: string;
+        sectionContent?: React.ReactNode;
     }[];
     year: number;
 }

@@ -7,13 +7,13 @@ import { NavBar } from './components/NavBar';
 import { Section } from './components/Section';
 
 function App() {
-    const { title, menuItems, year } = useAppContext();
+    const { title, headerItems, sectionItems, year } = useAppContext();
     return (
         <>
             <main className="flex-shrink-0">
                 <NavBar
                     title={title}
-                    menuItems={menuItems.map((item) => ({
+                    sectionItems={sectionItems.map((item) => ({
                         sectionName: item.sectionName,
                         shortcutText: item.shortcutText,
                     }))}
@@ -21,216 +21,24 @@ function App() {
 
                 <Header
                     personImage={personImage}
-                    personTags={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']}
-                    title={'Lorem ipsum dolor sit amet,'}
-                    subtitle={
-                        'consectetur adipisicing elit. Fugit dolorum itaque qui unde quisquam consequatur'
-                    }
-                    btnsText={menuItems.slice(0, 2).map((item) => ({
+                    personTags={headerItems.tags}
+                    title={headerItems.title}
+                    subtitle={headerItems.subtitle}
+                    btnsText={sectionItems.slice(0, 2).map((item) => ({
                         section: item.sectionName,
                         description: item.shortcutText,
                     }))}
                 />
 
-                <Section
-                    id={menuItems[0].sectionName}
-                    title={menuItems[0].sectionTitle}
-                >
-                    <p className="lead fw-light mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Fugit dolorum itaque qui unde quisquam
-                        consequatur.
-                    </p>
-                    <p className="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Fugit dolorum itaque qui unde quisquam consequatur
-                        autem. Eveniet quasi nobis aliquid cumque officiis sed
-                        rem iure ipsa! Praesentium ratione atque dolorem?
-                    </p>
-                    <div className="d-flex justify-content-center fs-2 gap-4">
-                        <a className="text-gradient" href="#!">
-                            <i className="bi bi-instagram"></i>
-                        </a>
-                        <a className="text-gradient" href="#!">
-                            <i className="bi bi-snapchat"></i>
-                        </a>
-                    </div>
-                </Section>
-
-                <Section
-                    id={menuItems[1].sectionName}
-                    title={menuItems[1].sectionTitle}
-                >
-                    <p className="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Fugit dolorum itaque qui unde quisquam consequatur
-                        autem. Eveniet quasi nobis aliquid cumque officiis sed
-                        rem iure ipsa! Praesentium ratione atque dolorem?
-                    </p>
-                    <div className="d-flex align-items-center justify-content-between mb-4">
-                        <h2 className="text-primary fw-bolder mb-0">Lorem</h2>
-                        <a className="btn btn-primary px-4 py-3" href="#!">
-                            <div className="d-inline-block bi bi-download me-2"></div>
-                            Download
-                        </a>
-                    </div>
-                    <div className="card shadow border-0 rounded-4 mb-5">
-                        <div className="card-body p-5">
-                            <div className="row align-items-center gx-5">
-                                <div className="col text-center text-lg-start mb-4 mb-lg-0">
-                                    <div className="bg-light p-4 rounded-4">
-                                        <div className="text-primary fw-bolder mb-2">
-                                            2019 - Present
-                                        </div>
-                                        <div className="small fw-bolder">
-                                            Web Developer
-                                        </div>
-                                        <div className="small text-muted">
-                                            Stark Industries
-                                        </div>
-                                        <div className="small text-muted">
-                                            Los Angeles, CA
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-8">
-                                    <div>
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Delectus laudantium,
-                                        voluptatem quis repellendus eaque sit
-                                        animi illo ipsam amet officiis corporis
-                                        sed aliquam non voluptate corrupti
-                                        excepturi maxime porro fuga.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card shadow border-0 rounded-4 mb-5">
-                        <div className="card-body p-5">
-                            <div className="row align-items-center gx-5">
-                                <div className="col text-center text-lg-start mb-4 mb-lg-0">
-                                    <div className="bg-light p-4 rounded-4">
-                                        <div className="text-primary fw-bolder mb-2">
-                                            2017 - 2019
-                                        </div>
-                                        <div className="small fw-bolder">
-                                            SEM Specialist
-                                        </div>
-                                        <div className="small text-muted">
-                                            Wayne Enterprises
-                                        </div>
-                                        <div className="small text-muted">
-                                            Gotham City, NY
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-8">
-                                    <div>
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Delectus laudantium,
-                                        voluptatem quis repellendus eaque sit
-                                        animi illo ipsam amet officiis corporis
-                                        sed aliquam non voluptate corrupti
-                                        excepturi maxime porro fuga.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Section>
-
-                <Section
-                    id={menuItems[2].sectionName}
-                    title={menuItems[2].sectionTitle}
-                >
-                    <p className="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Fugit dolorum itaque qui unde quisquam consequatur
-                        autem. Eveniet quasi nobis aliquid cumque officiis sed
-                        rem iure ipsa! Praesentium ratione atque dolorem?
-                    </p>
-                    <form>
-                        <div className="mb-3">
-                            <label htmlFor="name">Full name</label>
-                            <input
-                                className="form-control"
-                                id="name"
-                                type="text"
-                                placeholder="Enter your name..."
-                                required
-                            />
-                            <div
-                                className="invalid-feedback"
-                                data-sb-feedback="name:required"
-                            >
-                                A name is required.
-                            </div>
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="email">Email address</label>
-                            <input
-                                className="form-control"
-                                id="email"
-                                type="email"
-                                placeholder="name@example.com"
-                                required
-                            />
-                            <div
-                                className="invalid-feedback"
-                                data-sb-feedback="email:required"
-                            >
-                                An email is required.
-                            </div>
-                            <div
-                                className="invalid-feedback"
-                                data-sb-feedback="email:email"
-                            >
-                                Email is not valid.
-                            </div>
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="phone">Phone number</label>
-                            <input
-                                className="form-control"
-                                id="phone"
-                                type="tel"
-                                placeholder="12 9456-7890"
-                                required
-                            />
-                            <div
-                                className="invalid-feedback"
-                                data-sb-feedback="phone:required"
-                            >
-                                A phone number is required.
-                            </div>
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="message">Message</label>
-                            <textarea
-                                className="form-control"
-                                id="message"
-                                placeholder="Enter your message here..."
-                                required
-                            ></textarea>
-                            <div
-                                className="invalid-feedback"
-                                data-sb-feedback="message:required"
-                            >
-                                A message is required.
-                            </div>
-                        </div>
-                        <div className="d-grid">
-                            <button
-                                className="btn btn-primary btn-lg disabled"
-                                id="submitButton"
-                                type="submit"
-                            >
-                                <i className="bi bi-envelope text-white"></i>
-                            </button>
-                        </div>
-                    </form>
-                </Section>
+                {sectionItems.map((item, index) => (
+                    <Section
+                        key={index}
+                        id={item.sectionName}
+                        title={item.sectionTitle}
+                    >
+                        {item.sectionContent}
+                    </Section>
+                ))}
             </main>
             <Footer footerTitle={title} year={year} />
             <BackToTop />
