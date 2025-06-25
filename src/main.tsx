@@ -14,9 +14,21 @@ createRoot(document.getElementById('root')!).render(
         <AppProvider
             title="Manu faz XV"
             menuItems={[
-                { section: 'about', description: 'Manuela' },
-                { section: 'event', description: 'Evento' },
-                { section: 'rsvp', description: 'Confirmação' },
+                {
+                    sectionName: 'about',
+                    sectionTitle: 'Lorem ipsum',
+                    shortcutText: 'Manuela',
+                },
+                {
+                    sectionName: 'event',
+                    sectionTitle: 'Lorem ipsum dolor imet',
+                    shortcutText: 'Evento',
+                },
+                {
+                    sectionName: 'rsvp',
+                    sectionTitle: 'Lorem',
+                    shortcutText: 'Confirmação',
+                },
             ]}
             year={2025}
         >

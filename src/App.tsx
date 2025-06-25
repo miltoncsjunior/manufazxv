@@ -13,26 +13,33 @@ function App() {
             <main className="flex-shrink-0">
                 <NavBar
                     title={title}
-                    itemsDescription={menuItems.map((item) => item.description)}
+                    menuItems={menuItems.map((item) => ({
+                        sectionName: item.sectionName,
+                        shortcutText: item.shortcutText,
+                    }))}
                 />
 
                 <Header
                     profileImage={profileImage}
-                    profileTags={[
-                        'Corinthiana',
-                        'Sofredora',
-                        'Filha Única',
-                        'Amiga',
-                        'Sonhadora',
-                    ]}
-                    title={'Nem todos os caminhos levam a Roma,'}
-                    subtitle={'mas todos os caminhos levam a Manuela.'}
-                    btnsText={menuItems.slice(0, 2)}
+                    profileTags={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']}
+                    title={'Lorem ipsum dolor sit amet,'}
+                    subtitle={
+                        'consectetur adipisicing elit. Fugit dolorum itaque qui unde quisquam consequatur'
+                    }
+                    btnsText={menuItems.slice(0, 2).map((item) => ({
+                        section: item.sectionName,
+                        description: item.shortcutText,
+                    }))}
                 />
 
-                <Section id="about" title="Quem sou eu ?">
+                <Section
+                    id={menuItems[0].sectionName}
+                    title={menuItems[0].sectionTitle}
+                >
                     <p className="lead fw-light mb-4">
-                        Meu nome é Manuela Coutinho Paganin.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Fugit dolorum itaque qui unde quisquam
+                        consequatur.
                     </p>
                     <p className="text-muted">
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -50,7 +57,10 @@ function App() {
                     </div>
                 </Section>
 
-                <Section id="event" title="Informações do evento">
+                <Section
+                    id={menuItems[1].sectionName}
+                    title={menuItems[1].sectionTitle}
+                >
                     <p className="text-muted">
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Fugit dolorum itaque qui unde quisquam consequatur
@@ -58,12 +68,10 @@ function App() {
                         rem iure ipsa! Praesentium ratione atque dolorem?
                     </p>
                     <div className="d-flex align-items-center justify-content-between mb-4">
-                        <h2 className="text-primary fw-bolder mb-0">
-                            Experience
-                        </h2>
+                        <h2 className="text-primary fw-bolder mb-0">Lorem</h2>
                         <a className="btn btn-primary px-4 py-3" href="#!">
                             <div className="d-inline-block bi bi-download me-2"></div>
-                            Download Resume
+                            Download
                         </a>
                     </div>
                     <div className="card shadow border-0 rounded-4 mb-5">
@@ -132,7 +140,10 @@ function App() {
                     </div>
                 </Section>
 
-                <Section id="rsvp" title="Confirmação de presença">
+                <Section
+                    id={menuItems[2].sectionName}
+                    title={menuItems[2].sectionTitle}
+                >
                     <p className="text-muted">
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Fugit dolorum itaque qui unde quisquam consequatur

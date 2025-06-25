@@ -2,7 +2,11 @@ import { createContext, useContext } from 'react';
 
 interface AppContextProps {
     title: string;
-    menuItems: { section: string; description: string }[];
+    menuItems: {
+        sectionName: string;
+        sectionTitle: string;
+        shortcutText: string;
+    }[];
     year: number;
 }
 

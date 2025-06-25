@@ -1,15 +1,17 @@
 interface NavItemProps {
-    itemsSection: [string, string, string];
-    itemsDescription: [string, string, string];
+    menuItems: {
+        sectionName: string;
+        shortcutText: string;
+    }[];
 }
 
 export function NavItem(props: NavItemProps) {
     return (
         <>
-            {props.itemsSection.map((section, index) => (
-                <li className="nav-item" key={section}>
-                    <a className="nav-link" href={`#${section}`}>
-                        {props.itemsDescription[index]}
+            {props.menuItems.map((item, index) => (
+                <li className="nav-item" key={index}>
+                    <a className="nav-link" href={`#${item.sectionName}`}>
+                        {item.shortcutText}
                     </a>
                 </li>
             ))}
