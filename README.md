@@ -52,3 +52,33 @@ export default tseslint.config({
     },
 });
 ```
+## Publicando no GitHub Pages
+
+Para publicar este projeto no GitHub Pages, siga os passos abaixo:
+
+1. **Build do projeto**
+
+   No terminal, execute:
+   ```sh
+   npm run build
+   ```
+
+2. **Deploy para o GitHub Pages**
+
+   Execute o comando:
+   ```sh
+   npm run deploy
+   ```
+
+   Isso irá publicar o conteúdo da pasta `dist` na branch `gh-pages` do seu repositório.
+
+3. **Acesse seu site**
+
+   Após alguns minutos, acesse:
+   ```
+   https://miltoncsjunior.github.io/manufazxv
+   ```
+
+> **Observação:**
+> O endereço do site está configurado na propriedade `homepage` do arquivo `package.json`.
+> Certifique-se de que o repositório está público e que o GitHub Pages está configurado para servir a branch `gh-
