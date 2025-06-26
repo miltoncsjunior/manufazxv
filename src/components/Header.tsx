@@ -1,4 +1,5 @@
 import { Badge } from './Badge';
+import { Button } from './Button';
 
 interface HeaderProps {
     personImage: string;
@@ -37,17 +38,12 @@ export function Header(props: HeaderProps) {
                             </div>
                             <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
                                 {props.btnsText.map((btn, index) => (
-                                    <a
+                                    <Button
                                         key={index}
-                                        className={`btn btn-${
-                                            index === 0
-                                                ? 'primary text-white me-sm-3'
-                                                : 'outline-dark'
-                                        } btn-lg px-5 py-3 fs-6 fw-bolder`}
+                                        outline={index > 0}
                                         href={`#${btn.section}`}
-                                    >
-                                        {btn.description}
-                                    </a>
+                                        text={btn.description}
+                                    />
                                 ))}
                             </div>
                         </div>

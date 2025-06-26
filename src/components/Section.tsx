@@ -18,7 +18,7 @@ export function Section(props: SectionProps) {
                                     {props.title}
                                 </span>
                             </h2>
-                            {props.children && props.children}
+                            {props.children}
                         </div>
                     </div>
                 </div>
