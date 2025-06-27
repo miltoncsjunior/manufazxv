@@ -30,7 +30,7 @@ export function NavBar(props: NavBarProps) {
                 >
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                         {props.sectionItems && (
-                            <NavItem sectionItems={props.sectionItems} />
+                            <NavItem items={props.sectionItems} />
                         )}
                     </ul>
                 </div>

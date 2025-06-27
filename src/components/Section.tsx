@@ -8,7 +8,7 @@ interface SectionProps {
 
 export function Section(props: SectionProps) {
     return (
-        <section id={props.id} className="bg-light">
+        <section id={`section_${props.id}`} className="bg-light">
             <div className="container px-5">
                 <div className="row gx-5 justify-content-center">
                     <div className="col-xxl-8">

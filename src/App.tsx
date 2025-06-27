@@ -1,46 +1,114 @@
-import personImage from './assets/img/person.png';
+import { About } from './components/About';
 import { useAppContext } from './components/AppContext';
 import { BackToTop } from './components/BackToTop';
+import { Event } from './components/Event';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { NavBar } from './components/NavBar';
+import RenderHtmlString from './components/RenderHtmlString';
+import { Rsvp } from './components/Rsvp';
 import { Section } from './components/Section';
 
 function App() {
-    const { title, headerItems, sectionItems, year } = useAppContext();
+    const { data } = useAppContext();
+    const orderedItems = [
+        ...Object.values(data.staticSections || {}),
+        ...Object.values(data.customSections || []),
+    ].sort((a, b) => a.order - b.order);
+
     return (
         <>
             <main className="flex-shrink-0">
                 <NavBar
-                    title={title}
-                    sectionItems={sectionItems.map((item) => ({
-                        sectionName: item.sectionName,
+                    title={data.title}
+                    sectionItems={orderedItems.map((item) => ({
+                        sectionName: item.id.toString(),
                         shortcutText: item.shortcutText,
                     }))}
                 />
 
                 <Header
-                    personImage={personImage}
-                    personTags={headerItems.tags}
-                    title={headerItems.title}
-                    subtitle={headerItems.subtitle}
-                    btnsText={sectionItems.slice(0, 2).map((item) => ({
-                        section: item.sectionName,
+                    personImage={data.header.personImage}
+                    personTags={data.header.tags}
+                    title={data.header.title}
+                    subtitle={data.header.subTitle}
+                    btnsText={orderedItems.slice(0, 2).map((item) => ({
+                        section: item.id.toString(),
                         description: item.shortcutText,
                     }))}
                 />
 
-                {sectionItems.map((item, index) => (
+                {orderedItems.map((item, index) => (
                     <Section
                         key={index}
-                        id={item.sectionName}
-                        title={item.sectionTitle}
+                        id={item.id.toString()}
+                        title={item.title}
                     >
-                        {item.sectionContent}
+                        {(() => {
+                            if (
+                                'id' in item &&
+                                item.id === data.staticSections.about.id
+                            ) {
+                                return (
+                                    <About
+                                        description={
+                                            data.staticSections.about
+                                                .description
+                                        }
+                                        socialMedias={
+                                            data.staticSections.about
+                                                .socialMedias
+                                        }
+                                    />
+                                );
+                            } else if (
+                                'id' in item &&
+                                item.id === data.staticSections.event.id
+                            ) {
+                                return (
+                                    <Event
+                                        description={
+                                            data.staticSections.event
+                                                .description
+                                        }
+                                        cards={data.staticSections.event.cards}
+                                    />
+                                );
+                            } else if (
+                                'id' in item &&
+                                item.id === data.staticSections.rsvp.id
+                            ) {
+                                return (
+                                    <Rsvp
+                                        description={
+                                            data.staticSections.rsvp.description
+                                        }
+                                    />
+                                );
+                            }
+
+                            // Se não, renderiza a description normalmente
+                            else if (
+                                'description' in item &&
+                                typeof item.description === 'string'
+                            ) {
+                                return item.description;
+                            }
+
+                            // Se for customSection com content HTML
+                            else if (
+                                'content' in item &&
+                                typeof item.content === 'string'
+                            ) {
+                                return <RenderHtmlString html={item.content} />;
+                            }
+
+                            return null;
+                        })()}
                     </Section>
                 ))}
             </main>
-            <Footer footerTitle={title} year={year} />
+            <Footer footerTitle={data.title} year={data.year} />
             <BackToTop />
         </>
     );

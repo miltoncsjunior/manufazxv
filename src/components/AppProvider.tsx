@@ -1,34 +1,14 @@
 import type { ReactNode } from 'react';
+import type { DataJson } from '../models/DataJsonTypes';
 import { AppContext } from './AppContext';
 
 interface AppProviderProps {
+    data: DataJson;
     children: ReactNode;
-    title: string;
-    headerItems: {
-        tags: string[];
-        title: string;
-        subtitle: string;
-    };
-    sectionItems: {
-        sectionName: string;
-        shortcutText: string;
-        sectionTitle: string;
-        sectionSubtitle?: string;
-        sectionContent?: React.ReactNode;
-    }[];
-    year: number;
 }
 
-export function AppProvider({
-    children,
-    title,
-    headerItems,
-    sectionItems,
-    year,
-}: AppProviderProps) {
+export function AppProvider({ data, children }: AppProviderProps) {
     return (
-        <AppContext.Provider value={{ title, headerItems, sectionItems, year }}>
-            {children}
-        </AppContext.Provider>
+        <AppContext.Provider value={{ data }}>{children}</AppContext.Provider>
     );
 }

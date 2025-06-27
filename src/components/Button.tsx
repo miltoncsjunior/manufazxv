@@ -20,7 +20,9 @@ export function Button(props: ButtonProps) {
                     ? 'primary text-white me-sm-3'
                     : 'outline-dark'
             } btn-lg px-5 py-3 fs-6 fw-bolder`}
-            href={`#${props.href}`}
+            href={props.href}
+            {...(props.onClick ? { onClick: props.onClick } : {})}
+            role="button"
         >
             {props.leftIcon && (
                 <i

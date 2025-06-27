@@ -1,19 +1,8 @@
 import { createContext, useContext } from 'react';
+import type { DataJson } from '../models/DataJsonTypes';
 
 interface AppContextProps {
-    title: string;
-    headerItems: {
-        tags: string[];
-        title: string;
-        subtitle: string;
-    };
-    sectionItems: {
-        sectionName: string;
-        shortcutText: string;
-        sectionTitle: string;
-        sectionContent?: React.ReactNode;
-    }[];
-    year: number;
+    data: DataJson;
 }
 
 export const AppContext = createContext<AppContextProps | undefined>(undefined);

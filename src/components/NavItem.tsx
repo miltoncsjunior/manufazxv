@@ -1,5 +1,5 @@
 interface NavItemProps {
-    sectionItems: {
+    items: {
         sectionName: string;
         shortcutText: string;
     }[];
@@ -8,9 +8,12 @@ interface NavItemProps {
 export function NavItem(props: NavItemProps) {
     return (
         <>
-            {props.sectionItems.map((item, index) => (
+            {props.items.map((item, index) => (
                 <li className="nav-item" key={index}>
-                    <a className="nav-link" href={`#${item.sectionName}`}>
+                    <a
+                        className="nav-link"
+                        href={`#section_${item.sectionName}`}
+                    >
                         {item.shortcutText}
                     </a>
                 </li>

@@ -41,7 +41,7 @@ export function Header(props: HeaderProps) {
                                     <Button
                                         key={index}
                                         outline={index > 0}
-                                        href={`#${btn.section}`}
+                                        href={`#section_${btn.section}`}
                                         text={btn.description}
                                     />
                                 ))}
