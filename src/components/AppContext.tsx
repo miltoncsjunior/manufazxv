@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import type { DataJson } from '../types/dataJsonTypes';
+import type { DataJson } from '../types/dataJson';
 
 interface AppContextProps {
     data: DataJson;
