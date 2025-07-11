@@ -1,4 +1,4 @@
-import { NavItem } from './NavItem';
+import { NavItem } from './navItem';
 
 interface NavBarProps {
     title: string;
@@ -10,7 +10,7 @@ interface NavBarProps {
 
 export function NavBar(props: NavBarProps) {
     return (
-        <nav id="navBar" className="navbar navbar-expand-lg bg-white py-3">
+        <nav className="navbar navbar-expand-lg bg-white py-3">
             <div className="container px-5">
                 <span className="fw-bolder text-primary">{props.title}</span>
                 <button

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { HashLink } from 'react-router-hash-link';
 
 export function BackToTop() {
     useEffect(() => {
@@ -13,9 +14,10 @@ export function BackToTop() {
     }, []);
 
     return (
-        <a
-            href="#navBar"
+        <HashLink
             id="topButton"
+            smooth
+            to="#top"
             className="btn btn-secondary rounded-circle position-fixed text-white"
             style={{
                 bottom: '30px',
@@ -25,6 +27,6 @@ export function BackToTop() {
             }}
         >
             <i className="bi bi-arrow-up"></i>
-        </a>
+        </HashLink>
     );
 }

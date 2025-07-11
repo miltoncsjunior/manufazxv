@@ -1,6 +1,6 @@
-import { Button } from './Button';
-import { Form } from './Form';
-import { TextField } from './TextField';
+import { Button } from '../components/button';
+import { Form } from '../components/form';
+import { TextField } from '../components/textField';
 
 interface RsvpProps {
     description: string;

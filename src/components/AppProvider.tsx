@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import type { DataJson } from '../models/DataJsonTypes';
-import { AppContext } from './AppContext';
+import type { DataJson } from '../types/dataJson';
+import { AppContext } from './appContext';
 
 interface AppProviderProps {
     data: DataJson;

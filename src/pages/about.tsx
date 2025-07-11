@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 interface AboutProps {
     description: string;
     socialMedias?: {
@@ -12,9 +13,9 @@ export function About(props: AboutProps) {
             <p className="text-muted">{props.description}</p>
             <div className="d-flex justify-content-center fs-2 gap-4">
                 {props.socialMedias?.map((media, index) => (
-                    <a key={index} className="text-gradient" href={media.link}>
+                    <Link key={index} className="text-gradient" to={media.link}>
                         <i className={`bi bi-${media.icon}`}></i>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </>

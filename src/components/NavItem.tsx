@@ -1,3 +1,5 @@
+import { NavHashLink } from 'react-router-hash-link';
+
 interface NavItemProps {
     items: {
         sectionName: string;
@@ -10,12 +12,13 @@ export function NavItem(props: NavItemProps) {
         <>
             {props.items.map((item, index) => (
                 <li className="nav-item" key={index}>
-                    <a
+                    <NavHashLink
                         className="nav-link"
-                        href={`#section_${item.sectionName}`}
+                        smooth
+                        to={`#section_${item.sectionName}`}
                     >
                         {item.shortcutText}
-                    </a>
+                    </NavHashLink>
                 </li>
             ))}
         </>

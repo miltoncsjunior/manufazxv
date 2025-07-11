@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 interface ButtonProps {
     href: string;
     outline?: boolean;
@@ -14,13 +15,13 @@ export function Button(props: ButtonProps) {
     };
 
     return (
-        <a
+        <Link
             className={`btn btn-${
                 props.outline === false
                     ? 'primary text-white me-sm-3'
                     : 'outline-dark'
             } btn-lg px-5 py-3 fs-6 fw-bolder`}
-            href={props.href}
+            to={props.href}
             {...(props.onClick ? { onClick: props.onClick } : {})}
             role="button"
         >
@@ -35,6 +36,6 @@ export function Button(props: ButtonProps) {
                     className={`bi bi-${props.rightIcon} me-2 d-inline-block`}
                 ></i>
             )}
-        </a>
+        </Link>
     );
 }

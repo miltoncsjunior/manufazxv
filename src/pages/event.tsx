@@ -1,5 +1,5 @@
-import { Button } from './Button';
-import { Card, type CardProps } from './Card';
+import { Button } from '../components/button';
+import { Card, type CardProps } from '../components/card';
 
 interface EventProps {
     description: string;
