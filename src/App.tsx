@@ -1,13 +1,13 @@
-import { useAppContext } from './components/appContext';
-import { BackToTop } from './components/backToTop';
-import { Footer } from './components/footer';
-import { Header } from './components/header';
-import { NavBar } from './components/navBar';
-import RenderHtmlString from './components/renderHtmlString';
-import { Section } from './components/section';
-import { About } from './pages/about';
-import { Event } from './pages/event';
-import { Rsvp } from './pages/rsvp';
+import { useAppContext } from './components/AppContext';
+import { BackToTop } from './components/BackToTop';
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
+import { NavBar } from './components/NavBar';
+import RenderHtmlString from './components/RenderHtmlString';
+import { Section } from './components/Section';
+import { About } from './pages/About';
+import { Event } from './pages/Event';
+import { Rsvp } from './pages/Rsvp';
 
 function App() {
     const { data } = useAppContext();

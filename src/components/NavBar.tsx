@@ -1,4 +1,4 @@
-import { NavItem } from './navItem';
+import { NavItem } from './NavItem';
 
 interface NavBarProps {
     title: string;

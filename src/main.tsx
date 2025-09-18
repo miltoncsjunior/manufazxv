@@ -4,10 +4,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router';
-import App from './app.tsx';
+import App from './App.tsx';
 import './assets/css/colors.scss';
 import './assets/css/styles.css';
-import { AppProvider } from './components/appProvider.tsx';
+import { AppProvider } from './components/AppProvider.tsx';
 import type { DataJson } from './types/dataJson';
 
 import data from './data/data.json' with { type: 'json' };
